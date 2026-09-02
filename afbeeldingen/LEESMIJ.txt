@@ -1,0 +1,13 @@
+Hier komen de foto's van Shania's prints.
+
+Zet ze hier neer met een simpele naam zonder spaties, bijvoorbeeld:
+  nova.jpg          (het draakje)
+  pip.jpg           (de axolotl)
+  sam.jpg           (de slak)
+  golfvaas.jpg
+  naamplaatje.jpg
+  kattenpootje.jpg
+  deel-plaatje.png  (1200 x 630 px, verschijnt als je de link appt)
+
+Vierkante foto's van ongeveer 800 x 800 pixels werken het beste.
+Hoe je ze daarna in de site zet, staat in LEESMIJ.md, stap 4.

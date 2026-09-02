@@ -1,0 +1,5 @@
+# De site staat er wel, maar is nog niet af: er staan plaatshouders in
+# (verzonnen TikTok-naam, getekende beeldjes). Daarom voorlopig niet
+# in zoekmachines. Weghalen zodra de echte inhoud erin staat.
+User-agent: *
+Disallow: /
