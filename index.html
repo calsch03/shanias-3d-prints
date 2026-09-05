@@ -350,7 +350,7 @@ footer .sociaal svg{width:20px;height:20px}
   <!-- ===== hero ===== -->
   <header class="hero">
     <h1>Ik print <mark>schattige</mark> dingen</h1>
-    <p>En ik film het allemaal. Kom kijken &mdash; of laat mij iets voor jou maken.</p>
+    <p>Kom kijken &mdash; of laat mij iets voor jou maken.</p>
     <div class="badges">
       <span class="badge">&#127917; Beweegbaar</span>
       <span class="badge">&#127912; Eigen kleur</span>
@@ -367,7 +367,7 @@ footer .sociaal svg{width:20px;height:20px}
         <h2 id="tiktok-kop">Op TikTok</h2>
         <p class="tik-handle" data-tiktok-naam>@shania</p>
       </div>
-      <a class="knop knop-roze" href="https://www.tiktok.com/@shania" data-tiktok-link target="_blank" rel="noopener">Volgen</a>
+      <a class="knop knop-roze" href="https://www.tiktok.com/" data-tiktok-link target="_blank" rel="noopener">Volgen</a>
     </div>
     <div class="videos" id="videos">
       <div class="video"><span class="straks">binnenkort</span><span class="play" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24"><use href="#s-play"/></svg></span><b>Draakje</b></div>
@@ -503,7 +503,7 @@ footer .sociaal svg{width:20px;height:20px}
         <div class="honing" aria-hidden="true"><label for="website">Laat dit leeg</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
 
         <button class="knop knop-roze" type="submit" id="verstuurknop">Stuur maar op! &#10024;</button>
-        <p class="onder">Of stuur een DM op <a href="https://www.tiktok.com/@shania" data-tiktok-link target="_blank" rel="noopener">TikTok</a> &#128172;</p>
+        <p class="onder">Of stuur een DM op <a href="https://www.tiktok.com/" data-tiktok-link target="_blank" rel="noopener">TikTok</a> &#128172;</p>
       </form>
 
       <div class="bedankt" id="bedankt" hidden>
@@ -522,7 +522,7 @@ footer .sociaal svg{width:20px;height:20px}
 <footer>
   <div class="wrap">
     <span class="sociaal">
-      <a href="https://www.tiktok.com/@shania" data-tiktok-link target="_blank" rel="noopener" aria-label="Shania op TikTok"><svg viewBox="0 0 44 44" aria-hidden="true"><use href="#s-tiktok"/></svg></a>
+      <a href="https://www.tiktok.com/" data-tiktok-link target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 44 44" aria-hidden="true"><use href="#s-tiktok"/></svg></a>
     </span>
     <p>Shania&rsquo;s 3D Prints &middot; gemaakt met veel filament</p>
   </div>
@@ -555,6 +555,12 @@ const INSTELLINGEN = {
   // TikTok-naam zonder het @-teken:
   tiktokNaam: 'shania',
 
+  // Staat het echte account er al? Zolang dit false is wijzen alle
+  // TikTok-knoppen naar de homepagina van TikTok, zodat niemand per
+  // ongeluk bij een vreemd account uitkomt. Zet op true zodra de naam
+  // hierboven klopt.
+  accountBestaatAl: false,
+
   // Zolang deze lijst leeg is blijven de getekende tegeltjes staan.
   // Vul je hem, dan komt er een knop "Video's laden" met de echte video's.
   // Bijvoorbeeld: ['7301234567890123456', '7309876543210987654']
@@ -569,8 +575,11 @@ const INSTELLINGEN = {
 
 
 /* ---------- TikTok-naam overal invullen ---------- */
+const tiktokAdres = INSTELLINGEN.accountBestaatAl
+  ? 'https://www.tiktok.com/@' + INSTELLINGEN.tiktokNaam
+  : 'https://www.tiktok.com/';
 document.querySelectorAll('[data-tiktok-link]').forEach(function(a){
-  a.href = 'https://www.tiktok.com/@' + INSTELLINGEN.tiktokNaam;
+  a.href = tiktokAdres;
 });
 document.querySelectorAll('[data-tiktok-naam]').forEach(function(el){
   el.textContent = '@' + INSTELLINGEN.tiktokNaam;
